@@ -208,8 +208,9 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Text="Build date"/>
-                        <Calendar Grid.Row="1"></Calendar>
-                        
+                        <DatePicker Grid.Row="1" VerticalAlignment="Center"/>
+
+
                     </Grid>
 
                 </Grid>
