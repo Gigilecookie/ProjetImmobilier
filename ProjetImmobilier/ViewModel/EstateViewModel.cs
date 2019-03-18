@@ -8,5 +8,6 @@ namespace ProjetImmobilier.ViewModel
 {
     class EstateViewModel
     {
+
     }
 }

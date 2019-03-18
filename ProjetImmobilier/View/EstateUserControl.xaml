@@ -28,7 +28,7 @@
                 <Button Grid.Column="1" Grid.Row="0" Content="OK"/>
             </Grid>
             <Button Grid.Row="1" Content="Sort" />
-            <ListView Grid.Row="2">
+            <ListView Grid.Row="2" ItemsSource="{Binding }" SelectedIndex="{Binding }">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -48,7 +48,6 @@
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
         </Grid>
 
