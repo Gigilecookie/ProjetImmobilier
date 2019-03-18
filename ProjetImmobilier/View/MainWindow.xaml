@@ -6,25 +6,25 @@
         xmlns:local="clr-namespace:ProjetImmobilier"
         xmlns:view="clr-namespace:ProjetImmobilier.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="810">
+        Title="MainWindow" Height="900" Width="1600">
 
     <Window.Resources>
-        
+
         <!-- Style du TabControl -->
-        
+
         <Style TargetType="TabControl">
             <Setter Property="Template">
                 <Setter.Value>
-                    
+
                     <ControlTemplate TargetType="TabControl">
-                        
+
                         <Grid KeyboardNavigation.TabNavigation="Local">
-                            
+
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="60"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="6*"/>
                             </Grid.RowDefinitions>
-                            
+
                             <TabPanel
                                 Grid.Row="0"
                                 Panel.ZIndex="1"
@@ -32,26 +32,24 @@
                                 IsItemsHost="True"
                                 KeyboardNavigation.TabIndex="1"
                                 Background="#4CAF50" />
-                            
+
                             <Border
                                   Grid.Row="1"
-                                  BorderThickness="0"
-                                  CornerRadius="0"
                                   KeyboardNavigation.TabNavigation="Local"
                                   KeyboardNavigation.DirectionalNavigation="Contained"
                                   KeyboardNavigation.TabIndex="4">
-                                
-                                <ContentPresenter Margin="0" ContentSource="SelectedContent" />
-                                
+
+                                <ContentPresenter ContentSource="SelectedContent" />
+
                             </Border>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
         <!-- Fin du style du TabControl -->
-        
+
         <!-- Style tabItem -->
 
         <Style TargetType="TabItem">
@@ -60,36 +58,35 @@
                     <ControlTemplate TargetType="TabItem">
                         <Grid>
 
-                            <Border Margin="0,0,0,0" Padding="57,12,57,12" BorderThickness="0,0,0,0" CornerRadius="0,0,0,0">
-                                
+                            <Border Padding="57,12,57,12">
+
                                 <Border.Background>
 
                                     <SolidColorBrush Color="#4CAF50"/>
 
                                 </Border.Background>
-                                
+
                                 <ContentPresenter
                               VerticalAlignment="Center"
                               HorizontalAlignment="Center"
                               ContentSource="Header"
-                              Margin="0,0,0,0"
                               RecognizesAccessKey="True" />
-                                
+
                             </Border>
-                            
+
                         </Grid>
-                        
-                       <ControlTemplate.Triggers>
+
+                        <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="True">
-                                <Setter Property="Panel.ZIndex" Value="100" />
+                                <Setter Property="Panel.ZIndex" Value="200" />
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Cursor" Value="Hand"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
-                        
+
                     </ControlTemplate>
-                    
+
                 </Setter.Value>
             </Setter>
         </Style>
@@ -97,9 +94,9 @@
         <!-- Fin du style tabItem -->
 
     </Window.Resources>
-    
+
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="792">
+        <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <TabItem DataContext="{Binding Tabs[0]}">
                 <TabItem.Header>
                     <TextBlock FontSize="25" FontWeight="Bold" >Home</TextBlock>
