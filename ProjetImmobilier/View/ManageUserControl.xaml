@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProjetImmobilier.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="700" d:DesignWidth="1600">
 
     <UserControl.Resources>
 
@@ -32,9 +32,9 @@
             <Setter Property="HorizontalAlignment" Value="Right"/>
 
         </Style>
-        
+
     </UserControl.Resources>
-    
+
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -44,7 +44,7 @@
 
         </Grid.ColumnDefinitions>
 
-        <ScrollViewer Grid.Column="1" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="533">
+        <ScrollViewer Grid.Column="1" HorizontalAlignment="Left" Height="700" VerticalAlignment="Top" Width="1067">
 
             <Grid>
 
@@ -67,7 +67,7 @@
                 </Grid.RowDefinitions>
 
                 <!-- Schema pour une ligne -->
-                
+
                 <Grid Grid.Row="1">
 
                     <Grid.ColumnDefinitions>
@@ -83,7 +83,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Text="Address"/>
-                        <TextBox Grid.Row="1" Text="23 Chemin de Montpellas" Padding="5"/>
+                        <TextBox Grid.Row="1" Text="{Binding Address}" Padding="5"/>
 
                     </Grid>
 
@@ -95,14 +95,14 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Text="Zip"/>
-                        <TextBox Grid.Row="1" Text="69009" Padding="5"/>
-                        
+                        <TextBox Grid.Row="1" Text="{Binding Zip}" Padding="5"/>
+
                     </Grid>
-                    
+
                 </Grid>
 
                 <!-- Fin Schema pour une ligne -->
-                
+
                 <Grid Grid.Row="2">
 
                     <Grid.ColumnDefinitions>
@@ -118,7 +118,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Text="City"/>
-                        <TextBox Grid.Row="1" Text="Lyon" Padding="5"/>
+                        <TextBox Grid.Row="1" Text="{Binding City}" Padding="5"/>
 
                     </Grid>
 
@@ -130,7 +130,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Text="Surface (m²)"/>
-                        <TextBox Grid.Row="1" Text="190" Padding="5"/>
+                        <TextBox Grid.Row="1" Text="{Binding Surface}" Padding="5"/>
 
                     </Grid>
 
@@ -151,7 +151,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Text="Floor count"/>
-                        <TextBox Grid.Row="1" Text="3" Padding="5"/>
+                        <TextBox Grid.Row="1" Text="{Binding FloorC}" Padding="5"/>
 
                     </Grid>
 
@@ -163,7 +163,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Text="Floor number"/>
-                        <TextBox Grid.Row="1" Text="-1" Padding="5"/>
+                        <TextBox Grid.Row="1" Text="{Binding FloorN}" Padding="5"/>
 
                     </Grid>
 
@@ -184,7 +184,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Text="Rooms count"/>
-                        <TextBox Grid.Row="1" Text="Lyon" Padding="5"/>
+                        <TextBox Grid.Row="1" Text="{Binding RoomsC}" Padding="5"/>
 
                     </Grid>
 
@@ -196,7 +196,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Text="Energy efficiency"/>
-                        <TextBox Grid.Row="1" Text="190" Padding="5"/>
+                        <TextBox Grid.Row="1" Text="{Binding EnergyE}" Padding="5"/>
 
                     </Grid>
 
@@ -216,7 +216,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Text="Build date"/>
-                        <DatePicker Grid.Row="1" VerticalAlignment="Center"/>
+                        <DatePicker Grid.Row="1" VerticalAlignment="Center" SelectedDate="{Binding BuildDate, Mode=TwoWay}"/>
 
 
                     </Grid>
@@ -235,14 +235,14 @@
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
 
-                        <Button Content="Enregistrer" Grid.Row="0"/>
+                        <Button Content="Enregistrer" Grid.Row="0" Command="{Binding EnvoyerFormulaire}"/>
 
                     </Grid>
 
                 </Grid>
 
             </Grid>
-            
+
         </ScrollViewer>
 
     </Grid>

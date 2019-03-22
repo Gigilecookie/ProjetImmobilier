@@ -187,3 +187,4 @@ Z:\Documents\dotNET\GIT\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobi
 Z:\Documents\dotNET\GIT\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.csproj.CopyComplete
 Z:\Documents\dotNET\GIT\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.exe
 Z:\Documents\dotNET\GIT\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.pdb
+Z:\Documents\dotNET\GIT\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.csprojAssemblyReference.cache
