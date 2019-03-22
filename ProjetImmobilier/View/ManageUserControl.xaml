@@ -24,6 +24,14 @@
             <Setter Property="BorderThickness" Value="1 0 0.5 0"/>
 
         </Style>
+
+        <Style TargetType="Button">
+
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+
+        </Style>
         
     </UserControl.Resources>
     
@@ -210,6 +218,24 @@
                         <TextBlock Grid.Row="0" Text="Build date"/>
                         <DatePicker Grid.Row="1" VerticalAlignment="Center"/>
 
+
+                    </Grid>
+
+                </Grid>
+
+                <Grid Grid.Row="6">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <Button Content="Enregistrer" Grid.Row="0"/>
 
                     </Grid>
 
