@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ProjetImmobilier.ViewModel
 {
@@ -83,6 +84,28 @@ namespace ProjetImmobilier.ViewModel
 
         private void saveData()
         {
+
+            var e = new Model.Estate()
+            {
+
+                //Type = EstateType.House,
+                Address = this.Address,
+                Zip = this.Zip,
+                City = this.City,
+                //Latitude = 45.7997667,
+                //Longitude = 4.8253093,
+                Surface = Int32.Parse(this.Surface),
+                FloorCount = Int32.Parse(this.FloorC),
+                FloorNumber = Int32.Parse(this.FloorN),
+                RoomsCount = Int32.Parse(this.RoomsC),
+                EnergyEfficiency = Int32.Parse(this.EnergyE),
+                BuildDate = this.BuildDate
+
+            };
+
+            DataAccess.EstateDbContext.Current.Add(e);
+            DataAccess.EstateDbContext.Current.SaveChanges();
+
             /*var person = new Model.Person()
             {
 
