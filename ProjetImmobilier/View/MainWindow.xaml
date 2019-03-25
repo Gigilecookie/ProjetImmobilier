@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjetImmobilier"
         xmlns:view="clr-namespace:ProjetImmobilier.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1600">
+        Title="MainWindow" Height="500" Width="900">
 
     <Window.Resources>
 

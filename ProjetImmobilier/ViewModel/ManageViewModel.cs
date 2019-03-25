@@ -10,8 +10,14 @@ namespace ProjetImmobilier.ViewModel
     class ManageViewModel : Tools.BaseNotifyPropertyChanged
     {
 
-        private String address, zip, city, surface, floorC, floorN, roomsC, energyE;
+        /*private String address, zip, city, surface, floorC, floorN, roomsC, energyE;
         private DateTime buildDate;
+        private Array estateTypeItems;*/
+
+        public Array EstateTypeItems
+        {
+            get { return Enum.GetValues(typeof(Model.EstateType)); }
+        }
 
         public String Address
         {
