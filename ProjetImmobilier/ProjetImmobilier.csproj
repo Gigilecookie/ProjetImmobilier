@@ -170,6 +170,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\EstateItem.cs" />
     <Compile Include="View\ManageUserControl.xaml.cs">
       <DependentUpon>ManageUserControl.xaml</DependentUpon>
     </Compile>

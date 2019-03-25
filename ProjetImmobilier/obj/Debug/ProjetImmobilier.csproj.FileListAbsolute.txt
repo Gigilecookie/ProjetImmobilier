@@ -378,3 +378,14 @@ D:\GIT\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.csproj.CoreC
 D:\GIT\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.csproj.CopyComplete
 D:\GIT\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.exe
 D:\GIT\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.pdb
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.exe.config
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\View\EstateUserControl.g.cs
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\View\HomeUserControl.g.cs
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\View\MainWindow.g.cs
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\View\ManageUserControl.g.cs
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\View\SettingsUserControl.g.cs
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\App.g.cs
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier_Content.g.cs
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\GeneratedInternalTypeHelper.g.cs
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier_MarkupCompile.cache
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier_MarkupCompile.lref

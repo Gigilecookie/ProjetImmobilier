@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\GIT\ProjetImmobilier\ProjetImmobilier\obj\Debug\
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\
 ProjetImmobilier
 none
 false
 DEBUG;TRACE
-D:\GIT\ProjetImmobilier\ProjetImmobilier\App.xaml
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\App.xaml
 51022183748
-2738630457
-29379563550
-1552133211430
+2-47345452
+30-570482813
+155620505706
 View\EstateUserControl.xaml;View\HomeUserControl.xaml;View\MainWindow.xaml;View\ManageUserControl.xaml;View\SettingsUserControl.xaml;
 
-False
+True
 
