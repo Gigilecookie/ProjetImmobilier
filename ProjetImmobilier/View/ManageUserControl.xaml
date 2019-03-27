@@ -22,18 +22,18 @@
         <Style TargetType="TextBox">
 
             <Setter Property="BorderThickness" Value="1 0 0 1"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
+            <!--<Setter Property="VerticalAlignment" Value="Center"/>-->
 
         </Style>
 
-        <Style TargetType="Button">
+        <!--<Style TargetType="Button">
 
             <Setter Property="Width" Value="200"/>
             <Setter Property="Height" Value="30"/>
             <Setter Property="Margin" Value="0 10 0 0"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
 
-        </Style>
+        </Style>-->
 
         <Style TargetType="ScrollViewer">
 
@@ -41,7 +41,7 @@
             <Setter Property="Visibility" Value="Visible"/>
 
         </Style>
-        
+
     </UserControl.Resources>
 
     <Grid>
@@ -53,18 +53,53 @@
 
         </Grid.ColumnDefinitions>
 
-        <ScrollViewer Padding="20" Visibility="Visible" Grid.Column="1">
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="14*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Search" />
+                <Button Grid.Column="1" Grid.Row="0" Content="OK"/>
+            </Grid>
+            <Button Grid.Row="1" Content="Sort" />
+            <ListView Grid.Row="2">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0"/>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+                                <Label Content="Title" Grid.Row="0"/>
+                                <Label Content="Estate Type" Grid.Row="1"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        
+        <ScrollViewer Padding="20" Grid.Column="1">
 
             <Grid>
-
                 <Grid.ColumnDefinitions>
-
                     <ColumnDefinition Width="1*"/>
-
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
-
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="2*"/>
@@ -73,11 +108,10 @@
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="2*"/>
-
+                    <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0">
-
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
@@ -90,14 +124,12 @@
                 <!-- Schema pour une ligne -->
 
                 <Grid Grid.Row="1">
-
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
-
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
@@ -105,11 +137,9 @@
 
                         <TextBlock Grid.Row="0" Text="Address"/>
                         <TextBox Grid.Row="1" Text="{Binding Address}" Padding="5"/>
-
                     </Grid>
 
                     <Grid Grid.Column="1">
-
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
@@ -117,22 +147,18 @@
 
                         <TextBlock Grid.Row="0" Text="Zip"/>
                         <TextBox Grid.Row="1" Text="{Binding Zip}" Padding="5"/>
-
                     </Grid>
-
                 </Grid>
 
                 <!-- Fin Schema pour une ligne -->
 
                 <Grid Grid.Row="2">
-
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
-
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
@@ -140,11 +166,9 @@
 
                         <TextBlock Grid.Row="0" Text="City"/>
                         <TextBox Grid.Row="1" Text="{Binding City}" Padding="5"/>
-
                     </Grid>
 
                     <Grid Grid.Column="1">
-
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
@@ -152,20 +176,17 @@
 
                         <TextBlock Grid.Row="0" Text="Surface (m²)"/>
                         <TextBox Grid.Row="1" Text="{Binding Surface}" Padding="5"/>
-
                     </Grid>
 
                 </Grid>
 
                 <Grid Grid.Row="3">
-
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
-
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
@@ -173,11 +194,9 @@
 
                         <TextBlock Grid.Row="0" Text="Floor count"/>
                         <TextBox Grid.Row="1" Text="{Binding FloorC}" Padding="5"/>
-
                     </Grid>
 
                     <Grid Grid.Column="1">
-
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
@@ -185,20 +204,16 @@
 
                         <TextBlock Grid.Row="0" Text="Floor number"/>
                         <TextBox Grid.Row="1" Text="{Binding FloorN}" Padding="5"/>
-
                     </Grid>
-
                 </Grid>
 
                 <Grid Grid.Row="4">
-
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
-
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
@@ -206,11 +221,9 @@
 
                         <TextBlock Grid.Row="0" Text="Rooms count"/>
                         <TextBox Grid.Row="1" Text="{Binding RoomsC}" Padding="5"/>
-
                     </Grid>
 
                     <Grid Grid.Column="1">
-
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
@@ -218,19 +231,15 @@
 
                         <TextBlock Grid.Row="0" Text="Energy efficiency"/>
                         <TextBox Grid.Row="1" Text="{Binding EnergyE}" Padding="5"/>
-
                     </Grid>
-
                 </Grid>
 
                 <Grid Grid.Row="5">
-
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
-
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
@@ -238,21 +247,16 @@
 
                         <TextBlock Grid.Row="0" Text="Build date"/>
                         <DatePicker Grid.Row="1" VerticalAlignment="Center" SelectedDate="{Binding BuildDate, Mode=TwoWay}"/>
-
-
                     </Grid>
-
                 </Grid>
 
                 <Grid Grid.Row="6">
-
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
-
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
@@ -260,11 +264,9 @@
 
                         <TextBlock Grid.Row="0" Text="Latitude"/>
                         <TextBox Grid.Row="1" Text="{Binding RoomsC}" Padding="5"/>
-
                     </Grid>
 
                     <Grid Grid.Column="1">
-
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
@@ -272,29 +274,43 @@
 
                         <TextBlock Grid.Row="0" Text="Longitude"/>
                         <TextBox Grid.Row="1" Text="{Binding EnergyE}" Padding="5"/>
+                    </Grid>
+                </Grid>
 
+                <Grid Grid.Row="7">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <TextBlock Text="Choisir des images pour la vitrine"/>
                     </Grid>
 
-                </Grid>
-                
-                <Grid Grid.Row="7">
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
 
+                        <TextBox Grid.Column="0" Padding="5" IsReadOnly="True"/>
+                        <Button Content="Choisir..." Grid.Column="1"/>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="8">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
-
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
 
-                        <Button Content="Enregistrer" Grid.Row="0" Command="{Binding EnvoyerFormulaire}"/>
-
+                        <Button Content="Enregistrer" Grid.Row="0" Command="{Binding EnvoyerFormulaire}" Width="200" Height="30" HorizontalAlignment="Right" Margin="0 10 0 0"/>
                     </Grid>
-
                 </Grid>
-
             </Grid>
 
         </ScrollViewer>
