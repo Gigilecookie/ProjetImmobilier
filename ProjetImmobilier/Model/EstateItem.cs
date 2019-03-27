@@ -8,13 +8,14 @@ namespace ProjetImmobilier.Model
 {
     class EstateItem
     {
+        private String id;
         private String title;
         private String estateType;
         private String image;
 
-        public EstateItem(String title, String estateType, String image)
+        public EstateItem(String id, String title, String estateType, String image)
         {
-
+            this.id = id;
             this.title = title;
             this.estateType = estateType;
             this.image = image;
@@ -38,5 +39,12 @@ namespace ProjetImmobilier.Model
             get { return image; }
             set { image = value; }
         }
+
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
     }
 }

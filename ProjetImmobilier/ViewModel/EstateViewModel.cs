@@ -18,9 +18,17 @@ namespace ProjetImmobilier.ViewModel
         public EstateViewModel()
         {
             listEstate = new ObservableCollection<EstateItem>();
-            listEstate.Add(new EstateItem("Maison 1", "Maison", ""));
-            listEstate.Add(new EstateItem("Appartement 1", "Appartement", ""));
-
+            listEstate.Add(new EstateItem("0","Maison 1", "Maison", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
+            listEstate.Add(new EstateItem("1", "Appartement 1", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
+            listEstate.Add(new EstateItem("2", "Appartement 2", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
+            listEstate.Add(new EstateItem("3", "Appartement 3", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
+            listEstate.Add(new EstateItem("4", "Appartement 4", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
+            listEstate.Add(new EstateItem("5", "Appartement 5", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
+            listEstate.Add(new EstateItem("6", "Appartement 6", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
+            listEstate.Add(new EstateItem("7", "Appartement 7", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
+            listEstate.Add(new EstateItem("8", "Appartement 8", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
+            listEstate.Add(new EstateItem("9", "Appartement 9", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
+            listEstate.Add(new EstateItem("10", "Appartement 10", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
         }
 
         public ObservableCollection<EstateItem> ListEstate

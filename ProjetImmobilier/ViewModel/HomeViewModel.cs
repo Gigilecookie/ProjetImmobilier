@@ -12,7 +12,7 @@ namespace ProjetImmobilier.ViewModel
 {
     public class HomeViewModel
     {
-        private readonly Model.EstateType types;
+        private readonly EstateType types;
         public PlotModel MyModel { get; private set; }
         public HomeViewModel()
         {
