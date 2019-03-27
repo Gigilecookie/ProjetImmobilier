@@ -109,8 +109,8 @@ namespace ProjetImmobilier.ViewModel
 
             };
 
-            DataAccess.EstateDbContext.Current.Add(e);
-            DataAccess.EstateDbContext.Current.SaveChanges();
+            Model.EstateDbContext.Current.Add(e);
+            Model.EstateDbContext.Current.SaveChanges();
 
             /*var person = new Model.Person()
             {

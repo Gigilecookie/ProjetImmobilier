@@ -16,7 +16,7 @@ namespace ProjetImmobilier.Model
         protected async override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            await DataAccess.EstateDbContext.Initialize();
+            await EstateDbContext.Initialize();
         }
     }
 }

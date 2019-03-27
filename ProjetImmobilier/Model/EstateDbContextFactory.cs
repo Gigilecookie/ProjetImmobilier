@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace ProjetImmobilier.DataAccess
+namespace ProjetImmobilier.Model
 {
     public class EstateDbContextFactory : IDesignTimeDbContextFactory<EstateDbContext>
     {

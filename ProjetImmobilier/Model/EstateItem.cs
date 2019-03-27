@@ -9,23 +9,23 @@ namespace ProjetImmobilier.Model
     class EstateItem
     {
         private String id;
-        private String title;
+        private String surface;
         private String estateType;
         private String image;
 
-        public EstateItem(String id, String title, String estateType, String image)
+        public EstateItem(String id, String surface, String estateType, String image)
         {
             this.id = id;
-            this.title = title;
+            this.surface = surface;
             this.estateType = estateType;
             this.image = image;
 
         }
 
-        public string Title
+        public string Surface
         {
-            get { return title; }
-            set { title = value; }
+            get { return surface; }
+            set { surface = value; }
         }
 
         public string EstateType

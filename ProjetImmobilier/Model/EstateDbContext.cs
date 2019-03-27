@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace ProjetImmobilier.DataAccess
+namespace ProjetImmobilier.Model
 {
     public class EstateDbContext : DbContext
     {
