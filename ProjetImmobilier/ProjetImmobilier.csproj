@@ -188,6 +188,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Tools\Base64StringToBitmapImageConverter.cs" />
 =======
     <Compile Include="ViewModel\AddPersonViewModel.cs" />
@@ -195,6 +196,8 @@
       <DependentUpon>AddPersonWindow.xaml</DependentUpon>
     </Compile>
 >>>>>>> 3a0022b6ee55485acf94f944fb13d6445afebf02
+=======
+>>>>>>> parent of 3a0022b... Ajout d'une personne
 =======
 >>>>>>> parent of 3a0022b... Ajout d'une personne
 =======
