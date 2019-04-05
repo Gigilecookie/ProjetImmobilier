@@ -184,26 +184,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\EstateItem.cs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     <Compile Include="Tools\Base64StringToBitmapImageConverter.cs" />
-=======
     <Compile Include="ViewModel\AddPersonViewModel.cs" />
     <Compile Include="View\AddPersonWindow.xaml.cs">
       <DependentUpon>AddPersonWindow.xaml</DependentUpon>
     </Compile>
->>>>>>> 3a0022b6ee55485acf94f944fb13d6445afebf02
-=======
->>>>>>> parent of 3a0022b... Ajout d'une personne
-=======
->>>>>>> parent of 3a0022b... Ajout d'une personne
-=======
->>>>>>> parent of 3a0022b... Ajout d'une personne
-=======
->>>>>>> parent of 3a0022b... Ajout d'une personne
     <Compile Include="View\ManageUserControl.xaml.cs">
       <DependentUpon>ManageUserControl.xaml</DependentUpon>
     </Compile>
