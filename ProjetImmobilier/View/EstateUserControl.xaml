@@ -43,8 +43,8 @@
                                     <RowDefinition Height="1*"/>
                                     <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
-                                <Label Content="{Binding Title}" Grid.Row="0"/>
-                                <Label Content="{Binding EstateType}" Grid.Row="1"/>
+                                <Label Content="{Binding EstateType}" Grid.Row="0"/>
+                                <Label Content="{Binding Surface}" Grid.Row="1"/>
                             </Grid>
                         </Grid>
                     </DataTemplate>
@@ -59,7 +59,7 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="6*"/>
                 </Grid.RowDefinitions>
-                <Label Content="Titre" Grid.Row="0" HorizontalAlignment="Center" FontSize="20"/>
+                <Label Content="{Binding EstateType}" Grid.Row="0" HorizontalAlignment="Center" FontSize="20"/>
                 <Image Source="C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg" Grid.Row="1" MaxHeight="300" MaxWidth="300"/>
 
                 <Grid Grid.Row="2">
@@ -99,31 +99,31 @@
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Label Padding="10 0 0 0" Grid.Row="0" Content="Estate Type :" HorizontalAlignment="Left" FontSize="14"/>
-                            <Label Padding="10 0 0 0" Grid.Row="1" Content="House" HorizontalAlignment="Left" FontSize="12" />
+                            <Label Padding="10 0 0 0" Grid.Row="1" Content="{Binding EstateType}" HorizontalAlignment="Left" FontSize="12" />
 
                             <Label Padding="10 0 0 0" Grid.Row="2" Content="Address :" HorizontalAlignment="Left" FontSize="14"/>
-                            <Label Padding="10 0 0 0" Grid.Row="3" Content="66 rue du stade" HorizontalAlignment="Left" FontSize="12" />
+                            <Label Padding="10 0 0 0" Grid.Row="3" Content="{Binding Address}" HorizontalAlignment="Left" FontSize="12" />
 
                             <Label Padding="10 0 0 0" Grid.Row="4" Content="Zip :" HorizontalAlignment="Left" FontSize="14"/>
-                            <Label Padding="10 0 0 0" Grid.Row="5" Content="69460" HorizontalAlignment="Left" FontSize="12" />
+                            <Label Padding="10 0 0 0" Grid.Row="5" Content="{Binding Zip}" HorizontalAlignment="Left" FontSize="12" />
 
                             <Label Padding="10 0 0 0" Grid.Row="6" Content="City :" HorizontalAlignment="Left" FontSize="14"/>
-                            <Label Padding="10 0 0 0" Grid.Row="7" Content="Blace" HorizontalAlignment="Left" FontSize="12" />
+                            <Label Padding="10 0 0 0" Grid.Row="7" Content="{Binding City}" HorizontalAlignment="Left" FontSize="12" />
 
                             <Label Padding="10 0 0 0" Grid.Row="8" Content="Surface :" HorizontalAlignment="Left" FontSize="14"/>
-                            <Label Padding="10 0 0 0" Grid.Row="9" Content="120m²" HorizontalAlignment="Left" FontSize="12" />
+                            <Label Padding="10 0 0 0" Grid.Row="9" Content="{Binding Surface}" HorizontalAlignment="Left" FontSize="12" />
 
                             <Label Padding="10 0 0 0" Grid.Row="10" Content="Floor Count :" HorizontalAlignment="Left" FontSize="14"/>
-                            <Label Padding="10 0 0 0" Grid.Row="11" Content="2" HorizontalAlignment="Left" FontSize="12" />
+                            <Label Padding="10 0 0 0" Grid.Row="11" Content="{Binding FloorC}" HorizontalAlignment="Left" FontSize="12" />
 
                             <Label Padding="10 0 0 0" Grid.Row="12" Content="Rooms Count :" HorizontalAlignment="Left" FontSize="14"/>
-                            <Label Padding="10 0 0 0" Grid.Row="13" Content="5" HorizontalAlignment="Left" FontSize="12" />
+                            <Label Padding="10 0 0 0" Grid.Row="13" Content="{Binding RoomsC}" HorizontalAlignment="Left" FontSize="12" />
                             
                             <Label Padding="10 0 0 0" Grid.Row="14" Content="Energy Efficicency :" HorizontalAlignment="Left" FontSize="14"/>
-                            <Label Padding="10 0 0 0" Grid.Row="15" Content="B" HorizontalAlignment="Left" FontSize="12" />
+                            <Label Padding="10 0 0 0" Grid.Row="15" Content="{Binding EnergyE}" HorizontalAlignment="Left" FontSize="12" />
 
                             <Label Padding="10 0 0 0" Grid.Row="16" Content="Build Date :" HorizontalAlignment="Left" FontSize="14"/>
-                            <Label Padding="10 0 0 0" Grid.Row="17" Content="1987" HorizontalAlignment="Left" FontSize="12" />
+                            <Label Padding="10 0 0 0" Grid.Row="17" Content="{Binding BuildDate}" HorizontalAlignment="Left" FontSize="12" />
 
                             <Label Padding="10 0 0 0" Grid.Row="18" Content="Owner :" HorizontalAlignment="Left" FontSize="14"/>
                             <Label Padding="10 0 0 0" Grid.Row="19" Content="Bob Bobby" HorizontalAlignment="Left" FontSize="12" />
