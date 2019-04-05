@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tools;
+using ProjetImmobilier.Tools;
 
 namespace ProjetImmobilier.Model
 {
@@ -24,6 +24,12 @@ namespace ProjetImmobilier.Model
         public String Phone { get; set; }
         public String CellPhone { get; set; }
         public String Mail { get; set; }
+
+        [NotMapped]
+        public string CompleteName
+        {
+            get { return FirstName + " " + Name; }
+        }
 
     }
 }

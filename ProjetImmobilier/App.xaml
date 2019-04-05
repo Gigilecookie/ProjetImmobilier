@@ -1,9 +1,10 @@
 ﻿<Application x:Class="ProjetImmobilier.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:tools="clr-namespace:ProjetImmobilier.Tools"
              xmlns:local="clr-namespace:ProjetImmobilier"
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-         
+        <tools:Base64StringToBitmapImageConverter x:Key="Base64StringToBitmapImageConverter"/>
     </Application.Resources>
 </Application>

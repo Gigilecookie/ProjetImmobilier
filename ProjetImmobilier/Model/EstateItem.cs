@@ -10,14 +10,14 @@ namespace ProjetImmobilier.Model
     {
         private String id;
         private String surface;
-        private String estateType;
+        private String title;
         private String image;
 
-        public EstateItem(String id, String surface, String estateType, String image)
+        public EstateItem(String id, String surface, String title, String image)
         {
             this.id = id;
             this.surface = surface;
-            this.estateType = estateType;
+            this.title = title;
             this.image = image;
 
         }
@@ -28,10 +28,10 @@ namespace ProjetImmobilier.Model
             set { surface = value; }
         }
 
-        public string EstateType
+        public string Title
         {
-            get { return estateType; }
-            set { estateType = value; }
+            get { return title; }
+            set { title = value; }
         }
 
         public string Image

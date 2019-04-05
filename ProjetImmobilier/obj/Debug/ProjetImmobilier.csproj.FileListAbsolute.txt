@@ -580,4 +580,9 @@ Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\obj
 Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.pdb
 Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
 Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\App.baml
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\bin\Debug\Microsoft.Expression.Interactions.dll
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\bin\Debug\System.Windows.Interactivity.dll
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\bin\Debug\Microsoft.Expression.Interactions.xml
+Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\bin\Debug\System.Windows.Interactivity.xml
 Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.csprojAssemblyReference.cache
