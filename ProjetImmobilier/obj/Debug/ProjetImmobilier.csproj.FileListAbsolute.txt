@@ -583,3 +583,5 @@ Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\bin
 Z:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.csprojAssemblyReference.cache
 D:\GIT\ProjetImmobilier\ProjetImmobilier\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
 D:\GIT\ProjetImmobilier\ProjetImmobilier\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
+D:\GIT\ProjetImmobilier\ProjetImmobilier\obj\Debug\View\AddPersonWindow.g.cs
+D:\GIT\ProjetImmobilier\ProjetImmobilier\obj\Debug\View\AddPersonWindow.baml

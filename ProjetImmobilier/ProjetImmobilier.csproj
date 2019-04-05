@@ -178,12 +178,20 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\EstateItem.cs" />
+    <Compile Include="ViewModel\AddPersonViewModel.cs" />
+    <Compile Include="View\AddPersonWindow.xaml.cs">
+      <DependentUpon>AddPersonWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManageUserControl.xaml.cs">
       <DependentUpon>ManageUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SettingsUserControl.xaml.cs">
       <DependentUpon>SettingsUserControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\AddPersonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\EstateUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
