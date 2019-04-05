@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace ProjetImmobilier.Model
+namespace ProjetImmobilier
 {
     /// <summary>
     /// Logique d'interaction pour App.xaml
@@ -16,7 +16,7 @@ namespace ProjetImmobilier.Model
         protected async override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            await EstateDbContext.Initialize();
+            await Model.EstateDbContext.Initialize();
         }
     }
 }
