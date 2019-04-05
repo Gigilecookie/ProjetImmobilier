@@ -1,5 +1,4 @@
-﻿using ProjetImmobilier.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +9,10 @@ namespace ProjetImmobilier.ViewModel
 {
     class ManageViewModel : Tools.BaseNotifyPropertyChanged
     {
-        private int ownerId;
+
+        /*private String address, zip, city, surface, floorC, floorN, roomsC, energyE;
+        private DateTime buildDate;
+        private Array estateTypeItems;*/
 
         public Array EstateTypeItems
         {
@@ -71,96 +73,44 @@ namespace ProjetImmobilier.ViewModel
             set { SetField(value); }
         }
 
-        public String Nom
-        {
-            get { return GetField<String>(); }
-            set { SetField(value); }
-        }
-
-        public String Prenom
-        {
-            get { return GetField<String>(); }
-            set { SetField(value); }
-        }
-
-        public String Description
-        {
-            get { return GetField<String>(); }
-            set { SetField(value); }
-        }
-
-        public int Prix
-        {
-            get { return GetField<int>(); }
-            set { SetField(value); }
-        }
-
-        public bool Enabled
-        {
-            get { return GetField<bool>(); }
-            set { SetField(value); }
-        }
-
         public ManageViewModel()
         {
             BuildDate = DateTime.Now;
-            Enabled = true;
-            Address = "";
-            Zip = "";
-            City =  "";
-            Surface = "";
-            FloorC = "";
-            FloorN = "";
-            RoomsC = "";
-            EnergyE = "";
-            Nom = "";
-            Prenom = "";
-            Description = "";
-        }
-
-        public Commands.Command Rechercher
-        {
-            get
-            {
-                return new Commands.Command(search);
-            }
-        }
-
-        public Commands.Command Ajouter
-        {
-            get
-            {
-                return new Commands.Command(add);
-            }
         }
 
         public Commands.Command EnvoyerFormulaire
         {
+
             get
             {
                 return new Commands.Command(saveData);
             }
+
         }
 
         private void saveData()
         {
-            /*var e = new Model.Person()
+
+            var e = new Model.Estate()
             {
 
-                Quality = Quality.Mister,
-                Name = "Ferrer",
-                FirstName = "Hugo",
-                Address = "41 rue Hénon",
-                Zip = "69004",
-                City = "Lyon",
-                Phone = "0608355564",
-                CellPhone = "0608355564",
-                Mail = "hugo-ferrer@hotmail.fr"
+                //Type = EstateType.House,
+                Address = this.Address,
+                Zip = this.Zip,
+                City = this.City,
+                //Latitude = 45.7997667,
+                //Longitude = 4.8253093,
+                Surface = Int32.Parse(this.Surface),
+                FloorCount = Int32.Parse(this.FloorC),
+                FloorNumber = Int32.Parse(this.FloorN),
+                RoomsCount = Int32.Parse(this.RoomsC),
+                EnergyEfficiency = Int32.Parse(this.EnergyE),
+                BuildDate = this.BuildDate
 
             };
 
             Model.EstateDbContext.Current.Add(e);
-            Model.EstateDbContext.Current.SaveChanges();*/
+            Model.EstateDbContext.Current.SaveChanges();
 
             /*var person = new Model.Person()
             {
@@ -219,34 +169,6 @@ namespace ProjetImmobilier.ViewModel
                 .Where(estate => estate.City == "Lyon")
                 .OrderBy(estate => estate.Address)
                 .First();*/
-        }
-
-        private void search()
-        {
-            if (!Nom.Equals("") && !Prenom.Equals(""))
-            {
-                var person = EstateDbContext.Current.Persons.Where(p => p.Name == Nom && p.FirstName == Prenom)
-                                                            .Select(p => p.Id)
-                                                            .ToList();
-                if (person.Count != 0)
-                {
-                    ownerId = person[0];
-                    Enabled = false;
-                }
-                else
-                {
-                    add();
-                }
-            } else
-            {
-                add();
-            }
-        }
-
-        private void add()
-        {
-            View.AddPersonWindow win = new View.AddPersonWindow(Nom, Prenom);
-            win.Show();
         }
 
     }
