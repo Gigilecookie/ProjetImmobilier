@@ -1,8 +1,18 @@
 ﻿
+<<<<<<< HEAD
 FZ:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\App.xaml;;
 FZ:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\View\EstateUserControl.xaml;;
 FZ:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\View\HomeUserControl.xaml;;
 FZ:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\View\MainWindow.xaml;;
 FZ:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\View\ManageUserControl.xaml;;
 FZ:\dotNet\Projetmmobilier\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\View\SettingsUserControl.xaml;;
+=======
+
+FD:\GIT\ProjetImmobilier\ProjetImmobilier\View\EstateUserControl.xaml;;
+FD:\GIT\ProjetImmobilier\ProjetImmobilier\View\HomeUserControl.xaml;;
+FD:\GIT\ProjetImmobilier\ProjetImmobilier\View\MainWindow.xaml;;
+FD:\GIT\ProjetImmobilier\ProjetImmobilier\View\ManageUserControl.xaml;;
+FD:\GIT\ProjetImmobilier\ProjetImmobilier\View\SettingsUserControl.xaml;;
+FD:\GIT\ProjetImmobilier\ProjetImmobilier\View\AddPersonWindow.xaml;;
+>>>>>>> 3a0022b6ee55485acf94f944fb13d6445afebf02
 
