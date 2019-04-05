@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tools;
+using ProjetImmobilier.Tools;
 
 namespace ProjetImmobilier.Model
 {
@@ -39,5 +39,18 @@ namespace ProjetImmobilier.Model
 
         [InverseProperty(nameof(Contract.Estate))]
         public ObservableCollection<Contract> Contracts { get; set; }
+
+        [NotMapped]
+        public string CompleteAddress
+        {
+            get { return Address + ", " + Zip + " " + City; }
+        }
+
+        [NotMapped]
+        public string SurfaceUnit
+        {
+            get { return Surface + "m²"; }
+        }
+
     }
 }

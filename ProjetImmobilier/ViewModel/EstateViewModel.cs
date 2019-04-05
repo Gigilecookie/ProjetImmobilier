@@ -6,7 +6,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tools;
+using ProjetImmobilier.Tools;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProjetImmobilier.ViewModel
 {
@@ -14,26 +15,20 @@ namespace ProjetImmobilier.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private ObservableCollection<EstateItem> listEstate;
-        private EstateItem selectedEstate;
+        private Estate selectedEstate;
+        private ObservableCollection<Estate> listEstate;
 
         public EstateViewModel()
         {
-            listEstate = new ObservableCollection<EstateItem>();
-            listEstate.Add(new EstateItem("0", "120m²", "Maison", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
-            listEstate.Add(new EstateItem("1", "120m²", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
-            listEstate.Add(new EstateItem("2", "120m²", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
-            listEstate.Add(new EstateItem("3", "120m²", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
-            listEstate.Add(new EstateItem("4", "120m²", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
-            listEstate.Add(new EstateItem("5", "120m²", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
-            listEstate.Add(new EstateItem("6", "120m²", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
-            listEstate.Add(new EstateItem("7", "120m²", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
-            listEstate.Add(new EstateItem("8", "120m²", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
-            listEstate.Add(new EstateItem("9", "120m²", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
-            listEstate.Add(new EstateItem("10", "120m²", "Appartement", "C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg"));
+
+            listEstate = new ObservableCollection<Estate>(EstateDbContext.Current.Estates.Include(e => e.Photos)
+                                                                                        .Include(e => e.Contracts)
+                                                                                        .Include(e => e.MainPhoto)
+                                                                                        .Include(e => e.Owner));
+
         }
 
-        public ObservableCollection<EstateItem> ListEstate
+        public ObservableCollection<Estate> ListEstate
         {
             get { return listEstate; }
             set
@@ -46,7 +41,7 @@ namespace ProjetImmobilier.ViewModel
             }
         }
 
-        public EstateItem SelectedEstate
+        public Estate SelectedEstate
         {
             get { return selectedEstate; }
             set
@@ -63,6 +58,13 @@ namespace ProjetImmobilier.ViewModel
         public Array EstateTypeItems
         {
             get { return Enum.GetValues(typeof(Model.EstateType)); }
+            set { SetField(value); }
+        }
+
+        public String Title
+        {
+            get { return GetField<String>(); }
+            set { SetField(value); }
         }
 
         public String Address
@@ -113,10 +115,30 @@ namespace ProjetImmobilier.ViewModel
             set { SetField(value); }
         }
 
-        private void selectEstate(EstateItem e)
+        public String Photo
         {
-            RoomsC = e.Id;
-            System.Console.WriteLine("JE SUIS LA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            get { return GetField<String>(); }
+            set { SetField(value); }
+        }
+
+        private void selectEstate(Estate e)
+        {
+            int id = e.Id - 2;
+
+            //EstateTypeItems = a[id].Type.ToString();
+            Title = listEstate[id].Contracts[0].Title;
+            Photo = listEstate[id].MainPhoto.Content;
+            Address = listEstate[id].Address.ToString();
+            Zip = listEstate[id].Zip.ToString();
+            City = listEstate[id].City.ToString();
+            Surface = listEstate[id].Surface.ToString() + "m²";
+            FloorC = listEstate[id].FloorCount.ToString();
+            RoomsC = listEstate[id].RoomsCount.ToString();
+            EnergyE = listEstate[id].EnergyEfficiency.ToString();
+            RoomsC = listEstate[id].RoomsCount.ToString();
+            //BuildDate = listEstate[id].BuildDate.Value;
+
+
         }
     }
 }

@@ -7,6 +7,21 @@
              xmlns:wpf="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+
+        <Style TargetType="Label">
+
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="FontSize" Value="11pt"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+
+        </Style>
+    </UserControl.Resources>
+
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.5*" />
@@ -37,14 +52,14 @@
                                 <ColumnDefinition Width="1*"/>
                                 <ColumnDefinition Width="3*"/>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="{Binding Image, Mode=OneWay}" MaxHeight="100" MaxWidth="100" />
+                            <Image Grid.Column="0" Source="{Binding MainPhoto.Content, Converter={StaticResource Base64StringToBitmapImageConverter}}" MaxHeight="100" MaxWidth="100" />
                             <Grid Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="1*"/>
                                     <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
-                                <Label Content="{Binding EstateType}" Grid.Row="0"/>
-                                <Label Content="{Binding Surface}" Grid.Row="1"/>
+                                <Label Content="{Binding CompleteAddress}" Grid.Row="0"/>
+                                <Label Content="{Binding SurfaceUnit}" Grid.Row="1"/>
                             </Grid>
                         </Grid>
                     </DataTemplate>
@@ -59,8 +74,8 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="6*"/>
                 </Grid.RowDefinitions>
-                <Label Content="{Binding EstateType}" Grid.Row="0" HorizontalAlignment="Center" FontSize="20"/>
-                <Image Source="C:\\Users\\Public\\Pictures\\Sample Pictures\\Koala.jpg" Grid.Row="1" MaxHeight="300" MaxWidth="300"/>
+                <Label Content="{Binding Title}" Grid.Row="0" HorizontalAlignment="Center" FontSize="20"/>
+                <Image Source="{Binding Photo, Converter={StaticResource Base64StringToBitmapImageConverter}}" Grid.Row="1" MaxHeight="300" MaxWidth="300"/>
 
                 <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
@@ -99,7 +114,7 @@
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Label Padding="10 0 0 0" Grid.Row="0" Content="Estate Type :" HorizontalAlignment="Left" FontSize="14"/>
-                            <Label Padding="10 0 0 0" Grid.Row="1" Content="{Binding EstateType}" HorizontalAlignment="Left" FontSize="12" />
+                            <Label Padding="10 0 0 0" Grid.Row="1" Content="{Binding EstateTypeItems}" HorizontalAlignment="Left" FontSize="12" />
 
                             <Label Padding="10 0 0 0" Grid.Row="2" Content="Address :" HorizontalAlignment="Left" FontSize="14"/>
                             <Label Padding="10 0 0 0" Grid.Row="3" Content="{Binding Address}" HorizontalAlignment="Left" FontSize="12" />
@@ -126,7 +141,7 @@
                             <Label Padding="10 0 0 0" Grid.Row="17" Content="{Binding BuildDate}" HorizontalAlignment="Left" FontSize="12" />
 
                             <Label Padding="10 0 0 0" Grid.Row="18" Content="Owner :" HorizontalAlignment="Left" FontSize="14"/>
-                            <Label Padding="10 0 0 0" Grid.Row="19" Content="Bob Bobby" HorizontalAlignment="Left" FontSize="12" />
+                            <Label Padding="10 0 0 0" Grid.Row="19" Content="{Binding ListEstate.Owner.CompleteName}" HorizontalAlignment="Left" FontSize="12" Foreground="Black"/>
 
                         </Grid>
 

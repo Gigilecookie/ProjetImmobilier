@@ -4,7 +4,7 @@ using System.Linq;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Tools
+namespace ProjetImmobilier.Tools
 {
     public abstract class BaseNotifyPropertyChanged : INotifyPropertyChanged
     {
