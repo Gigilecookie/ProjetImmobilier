@@ -92,7 +92,7 @@
             </ListView>
         </Grid>
         
-        <ScrollViewer Padding="20" Grid.Column="1">
+        <ScrollViewer Padding="20" Grid.ColumnSpan="2" Margin="218,0,0,-388.4">
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -100,6 +100,8 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="2*"/>
@@ -251,6 +253,16 @@
                 </Grid>
 
                 <Grid Grid.Row="6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0">Description</TextBlock>
+                    <TextBox Grid.Row="1" TextWrapping="Wrap" AcceptsTab="True" AcceptsReturn="True"></TextBox>
+                </Grid>
+
+                <Grid Grid.Row="7">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
@@ -262,8 +274,8 @@
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="0" Text="Latitude"/>
-                        <TextBox Grid.Row="1" Text="{Binding RoomsC}" Padding="5"/>
+                        <TextBlock Grid.Row="0">Name</TextBlock>
+                        <TextBox Grid.Row="1" Text="{Binding Name}"></TextBox>
                     </Grid>
 
                     <Grid Grid.Column="1">
@@ -272,12 +284,22 @@
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="0" Text="Longitude"/>
-                        <TextBox Grid.Row="1" Text="{Binding EnergyE}" Padding="5"/>
+                        <TextBlock Grid.Row="0">Firstname</TextBlock>
+                        <TextBox Grid.Row="1" Text="{Binding Firstname}"></TextBox>
                     </Grid>
                 </Grid>
 
-                <Grid Grid.Row="7">
+                <Grid Grid.Row="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0">Price</TextBlock>
+                    <TextBox Grid.Row="1" Text="{Binding Price}"></TextBox>
+                </Grid>
+                
+                <Grid Grid.Row="9">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
@@ -298,7 +320,7 @@
                     </Grid>
                 </Grid>
 
-                <Grid Grid.Row="8">
+                <Grid Grid.Row="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
