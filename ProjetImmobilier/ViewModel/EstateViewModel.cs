@@ -123,7 +123,7 @@ namespace ProjetImmobilier.ViewModel
 
         private void selectEstate(Estate e)
         {
-            int id = e.Id - 2;
+            int id = e.Id - 1;
 
             //EstateTypeItems = a[id].Type.ToString();
             Title = listEstate[id].Contracts[0].Title;
