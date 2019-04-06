@@ -13,8 +13,8 @@ namespace ProjetImmobilier.ViewModel
 
         public AddPersonViewModel(String n, String p, View.AddPersonWindow o)
         {
-            Lastame = "";
-            Firstname = "";
+            Lastname = n;
+            Firstname = p;
             AddressP = "";
             Zip = "";
             City = "";
@@ -34,7 +34,7 @@ namespace ProjetImmobilier.ViewModel
             set { SetField(value); }
         }
 
-        public String Lastame
+        public String Lastname
         {
             get { return GetField<String>(); }
             set { SetField(value); }
@@ -91,7 +91,7 @@ namespace ProjetImmobilier.ViewModel
             var person = new Model.Person()
             {
                 Quality = Selected,
-                Name = Lastame,
+                Name = Lastname,
                 FirstName = Firstname,
                 Address = AddressP,
                 Zip = Zip,
