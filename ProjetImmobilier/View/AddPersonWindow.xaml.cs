@@ -19,10 +19,10 @@ namespace ProjetImmobilier.View
     /// </summary>
     public partial class AddPersonWindow : Window
     {
-        public AddPersonWindow()
+        public AddPersonWindow(String n, String p)
         {
             InitializeComponent();
-            this.DataContext = new ViewModel.AddPersonViewModel();
+            this.DataContext = new ViewModel.AddPersonViewModel(n, p, this);
         }
     }
 }

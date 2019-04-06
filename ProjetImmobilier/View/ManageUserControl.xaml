@@ -92,7 +92,7 @@
             </ListView>
         </Grid>
         
-        <ScrollViewer Padding="20" Grid.ColumnSpan="2" Margin="218,0,0,-388.4">
+        <ScrollViewer Padding="20" Grid.Column="1">
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -259,11 +259,13 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="0">Description</TextBlock>
-                    <TextBox Grid.Row="1" TextWrapping="Wrap" AcceptsTab="True" AcceptsReturn="True"></TextBox>
+                    <TextBox Grid.Row="1" TextWrapping="Wrap" AcceptsTab="True" AcceptsReturn="True" Padding="5" Text="{Binding Description}"></TextBox>
                 </Grid>
 
                 <Grid Grid.Row="7">
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
@@ -275,7 +277,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0">Name</TextBlock>
-                        <TextBox Grid.Row="1" Text="{Binding Name}"></TextBox>
+                        <TextBox Grid.Row="1" Text="{Binding Name}" Padding="5" IsEnabled="{Binding Enabled}"></TextBox>
                     </Grid>
 
                     <Grid Grid.Column="1">
@@ -285,7 +287,25 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0">Firstname</TextBlock>
-                        <TextBox Grid.Row="1" Text="{Binding Firstname}"></TextBox>
+                        <TextBox Grid.Row="1" Text="{Binding Firstname}" Padding="5" IsEnabled="{Binding Enabled}"></TextBox>
+                    </Grid>
+
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="1" Command="{Binding Search}" Margin="0 2 0 0" IsEnabled="{Binding Enabled}">Search >></Button>
+                    </Grid>
+
+                    <Grid Grid.Column="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="1" Command="{Binding Add}" Margin="0 2 0 0" IsEnabled="{Binding Enabled}">Add +</Button>
                     </Grid>
                 </Grid>
 
@@ -296,7 +316,7 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="0">Price</TextBlock>
-                    <TextBox Grid.Row="1" Text="{Binding Price}"></TextBox>
+                    <TextBox Grid.Row="1" Text="{Binding Price}" Padding="5"></TextBox>
                 </Grid>
                 
                 <Grid Grid.Row="9">

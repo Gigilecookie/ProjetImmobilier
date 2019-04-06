@@ -11,7 +11,7 @@
         <Style TargetType="TextBlock">
 
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Padding" Value="5"/>
             <Setter Property="Foreground" Value="#333333"/>
             <Setter Property="FontSize" Value="11pt"/>
             <Setter Property="FontWeight" Value="Bold"/>
@@ -36,11 +36,114 @@
     <Grid>
         <ScrollViewer>
             <Grid>
-                
-                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0">Quality</TextBlock>
+                    <ComboBox Grid.Row="1" ItemsSource="{Binding QualityItems}" SelectedItem="{Binding Selected}"></ComboBox>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0">Firsname</TextBlock>
+                        <TextBox Grid.Row="1" Text="{Binding Firstname}"/>
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0">Lastname</TextBlock>
+                        <TextBox Grid.Row="1" Text="{Binding Lastname}"/>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0">Address</TextBlock>
+                    <TextBox Grid.Row="1" Text="{Binding AddressP}"/>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0">City</TextBlock>
+                        <TextBox Grid.Row="1" Text="{Binding City}"/>
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0">Zip code</TextBlock>
+                        <TextBox Grid.Row="1" Text="{Binding Zip}"/>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0">Phone number</TextBlock>
+                    <TextBox Grid.Row="1" Text="{Binding Phone}"/>
+                </Grid>
+
+                <Grid Grid.Row="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0">Mail</TextBlock>
+                    <TextBox Grid.Row="1" Text="{Binding Mail}"/>
+                </Grid>
+
+                <Grid Grid.Row="6">
+                    <Button Margin="0 10 0 0" Command="{Binding Add}">Add a person</Button>
+                </Grid>
             </Grid>
-            
         </ScrollViewer>
-        
     </Grid>
 </Window>

@@ -10,13 +10,17 @@ namespace ProjetImmobilier.ViewModel
     class ManageViewModel : Tools.BaseNotifyPropertyChanged
     {
 
-        /*private String address, zip, city, surface, floorC, floorN, roomsC, energyE;
-        private DateTime buildDate;
-        private Array estateTypeItems;*/
+        private int idPerson;
 
         public Array EstateTypeItems
         {
             get { return Enum.GetValues(typeof(Model.EstateType)); }
+        }
+
+        public bool Enabled
+        {
+            get { return GetField<bool>(); }
+            set { SetField(value); }
         }
 
         public String Address
@@ -67,15 +71,49 @@ namespace ProjetImmobilier.ViewModel
             set { SetField(value); }
         }
 
+        public String Name
+        {
+            get { return GetField<String>(); }
+            set { SetField(value); }
+        }
+
+        public String Firstname
+        {
+            get { return GetField<String>(); }
+            set { SetField(value); }
+        }
+
         public DateTime BuildDate
         {
             get { return GetField<DateTime>(); }
             set { SetField(value); }
         }
 
+        public int Price
+        {
+            get { return GetField<int>(); }
+            set { SetField(value); }
+        }
+
+        public String Description
+        {
+            get { return GetField<String>(); }
+            set { SetField(value); }
+        }
+
         public ManageViewModel()
         {
+            Enabled = true;
+            Address = "";
+            Zip = "";
+            City = "";
+            Surface = "";
+            FloorC = "";
+            FloorN = "";
+            RoomsC = "";
+            EnergyE = "";
             BuildDate = DateTime.Now;
+            Description = "";
         }
 
         public Commands.Command EnvoyerFormulaire
@@ -88,10 +126,54 @@ namespace ProjetImmobilier.ViewModel
 
         }
 
+        public Commands.Command Search
+        {
+
+            get
+            {
+                return new Commands.Command(search);
+            }
+
+        }
+
+        public Commands.Command Add
+        {
+
+            get
+            {
+                return new Commands.Command(add);
+            }
+
+        }
+
+        private void search()
+        {
+            var searchedPerson = Model.EstateDbContext.Current.Persons.Where(p => p.FirstName == Firstname && p.Name == Name)
+                                                                      .Select(p => p.Id)
+                                                                      .ToList();
+            if (searchedPerson.Count != 0)
+            {
+                idPerson = searchedPerson[0];
+                Enabled = false;
+            }else
+            {
+                add();
+            }
+        }
+
+        private void add()
+        {
+            View.AddPersonWindow win = new View.AddPersonWindow(Name, Firstname);
+            win.Show();
+        }
+
         private void saveData()
         {
 
-            var e = new Model.Estate()
+            // Créer l'estate
+            // Créer le contrat
+
+            /*var e = new Model.Estate()
             {
 
                 //Type = EstateType.House,
