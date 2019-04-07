@@ -25,7 +25,9 @@ namespace ProjetImmobilier.ViewModel
                                                                                         .Include(e => e.Contracts)
                                                                                         .Include(e => e.MainPhoto)
                                                                                         .Include(e => e.Owner));
-            selectEstate(listEstate[0]);
+            if (listEstate.Count != 0)
+                selectEstate(listEstate[0]);
+
             searchBar = "Search";
         }
 

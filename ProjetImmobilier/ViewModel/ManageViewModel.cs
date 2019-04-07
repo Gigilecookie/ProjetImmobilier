@@ -51,6 +51,29 @@ namespace ProjetImmobilier.ViewModel
             get { return Enum.GetValues(typeof(Model.EstateType)); }
         }
 
+        public Array ContractTypeItems
+        {
+            get { return Enum.GetValues(typeof(Model.ContractType)); }
+        }
+
+        public Model.EstateType SelectedEstateType
+        {
+            get { return GetField<Model.EstateType>(); }
+            set { SetField(value); }
+        }
+
+        public Model.ContractType SelectedContractType
+        {
+            get { return GetField<Model.ContractType>(); }
+            set { SetField(value); }
+        }
+
+        public String Title
+        {
+            get { return GetField<String>(); }
+            set { SetField(value); }
+        }
+
         public bool Enabled
         {
             get { return GetField<bool>(); }
@@ -229,86 +252,38 @@ namespace ProjetImmobilier.ViewModel
         {
 
             // Créer l'estate
-            // Créer le contrat
-
-            /*var e = new Model.Estate()
-            {
-
-                //Type = EstateType.House,
-                Address = this.Address,
-                Zip = this.Zip,
-                City = this.City,
-                //Latitude = 45.7997667,
-                //Longitude = 4.8253093,
-                Surface = Int32.Parse(this.Surface),
-                FloorCount = Int32.Parse(this.FloorC),
-                FloorNumber = Int32.Parse(this.FloorN),
-                RoomsCount = Int32.Parse(this.RoomsC),
-                EnergyEfficiency = Int32.Parse(this.EnergyE),
-                BuildDate = this.BuildDate
-
-            };
-
-            Model.EstateDbContext.Current.Add(e);
-            Model.EstateDbContext.Current.SaveChanges();
-
-            /*var person = new Model.Person()
-            {
-
-                Quality = Quality.Miss,
-                Name = "Fork",
-                FirstName = "Beth",
-                Address = "805 Crawford street",
-                Zip = "27893",
-                City = "Wilson",
-                Latitude = 35.7154951,
-                Longitude = -77.9208202,
-                Phone = "+33758462136",
-                CellPhone = "+33758462136",
-                Mail = "beth.fork@gmail.com"
-
-            };
-
             var estate = new Model.Estate()
             {
-
-                Type = EstateType.House,
-                Address = "23 Chemin de Montpellas",
-                Zip = "69009",
-                City = "Lyon",
-                Latitude = 45.7997667,
-                Longitude = 4.8253093,
-                Surface = 190,
-                FloorCount = 1,
-                FloorNumber = -1,
-                RoomsCount = 7,
-                EnergyEfficiency = 4,
-                BuildDate = new DateTime(2001, 2, 10, 0, 0, 0)
-                
+                Type = SelectedEstateType,
+                Address = Address,
+                Zip = Zip,
+                City = City,
+                Surface = Int32.Parse(Surface),
+                FloorCount = Int32.Parse(FloorC),
+                FloorNumber = Int32.Parse(FloorN),
+                RoomsCount = Int32.Parse(RoomsC),
+                EnergyEfficiency = Int32.Parse(EnergyE),
+                BuildDate = BuildDate,
+                OwnerId = idPerson
             };
 
+            // Récupérer l'id en base de données
+            var estId = Model.EstateDbContext.Current.Estates.Where(e => e.Address == Address).Select(e => e.Id).ToList();
+
+            int eId = 0;
+            if (estId.Count != 0)
+                eId = estId[0];
+
+            // Créer le contrat
             var contract = new Model.Contract()
             {
-
-                EstateId = 1,
-                Type = ContractType.Sale,
+                EstateId = eId,
+                Type = SelectedContractType,
                 PubDate = new DateTime(),
-                Description = "Loft aux bordures de la campagne",
-                Title = "Loft de 190m², Lyon 9ème",
-                Price = 395000
-
+                Description = Description,
+                Title = Title,
+                Price = Price
             };
-
-            DataAccess.EstateDbContext.Current.Add(person);
-            DataAccess.EstateDbContext.Current.Add(estate);
-            DataAccess.EstateDbContext.Current.Add(contract);
-
-            DataAccess.EstateDbContext.Current.SaveChanges();*/
-
-            /*var monBien = DataAccess.EstateDbContext.Current.Estates
-                .Where(estate => estate.City == "Lyon")
-                .OrderBy(estate => estate.Address)
-                .First();*/
         }
 
     }

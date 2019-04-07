@@ -22,18 +22,8 @@
         <Style TargetType="TextBox">
 
             <Setter Property="BorderThickness" Value="1 0 0 1"/>
-            <!--<Setter Property="VerticalAlignment" Value="Center"/>-->
 
         </Style>
-
-        <!--<Style TargetType="Button">
-
-            <Setter Property="Width" Value="200"/>
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="Margin" Value="0 10 0 0"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-
-        </Style>-->
 
         <Style TargetType="ScrollViewer">
 
@@ -111,6 +101,8 @@
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0">
@@ -119,13 +111,33 @@
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0">Type</TextBlock>
-                    <ComboBox Grid.Row="1" ItemsSource="{Binding EstateTypeItems}"/>
+                    <TextBlock Grid.Row="0">Title</TextBlock>
+                    <TextBox Grid.Row="1" Text="{Binding Title}" Padding="5"></TextBox>
+                </Grid>
+                
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0">Eestate type</TextBlock>
+                    <ComboBox Grid.Row="1" ItemsSource="{Binding EstateTypeItems}" SelectedItem="{Binding SelectedEstateType}"/>
                 </Grid>
 
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0">Contract type</TextBlock>
+                    <ComboBox Grid.Row="1" ItemsSource="{Binding ContractTypeItems}" SelectedItem="{Binding SelectedContractType}"/>
+                </Grid>
+                
                 <!-- Schema pour une ligne -->
 
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
@@ -154,7 +166,7 @@
 
                 <!-- Fin Schema pour une ligne -->
 
-                <Grid Grid.Row="2">
+                <Grid Grid.Row="4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
@@ -182,7 +194,7 @@
 
                 </Grid>
 
-                <Grid Grid.Row="3">
+                <Grid Grid.Row="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
@@ -209,7 +221,7 @@
                     </Grid>
                 </Grid>
 
-                <Grid Grid.Row="4">
+                <Grid Grid.Row="6">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
@@ -236,7 +248,7 @@
                     </Grid>
                 </Grid>
 
-                <Grid Grid.Row="5">
+                <Grid Grid.Row="7">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
@@ -252,7 +264,7 @@
                     </Grid>
                 </Grid>
 
-                <Grid Grid.Row="6">
+                <Grid Grid.Row="8">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
@@ -262,7 +274,7 @@
                     <TextBox Grid.Row="1" TextWrapping="Wrap" AcceptsTab="True" AcceptsReturn="True" Padding="5" Text="{Binding Description}"></TextBox>
                 </Grid>
 
-                <Grid Grid.Row="7">
+                <Grid Grid.Row="9">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
@@ -309,7 +321,7 @@
                     </Grid>
                 </Grid>
 
-                <Grid Grid.Row="8">
+                <Grid Grid.Row="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
@@ -319,14 +331,14 @@
                     <TextBox Grid.Row="1" Text="{Binding Price}" Padding="5"></TextBox>
                 </Grid>
                 
-                <Grid Grid.Row="9">
+                <Grid Grid.Row="11">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Row="0">
-                        <TextBlock Text="Choisir des images pour la vitrine"/>
+                        <TextBlock Text="Choose venture's images"/>
                     </Grid>
 
                     <Grid Grid.Row="1">
@@ -336,11 +348,11 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBox Grid.Column="0" Padding="5" IsReadOnly="True"/>
-                        <Button Content="Choisir..." Grid.Column="1"/>
+                        <Button Content="Choose..." Grid.Column="1"/>
                     </Grid>
                 </Grid>
 
-                <Grid Grid.Row="10">
+                <Grid Grid.Row="12">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
