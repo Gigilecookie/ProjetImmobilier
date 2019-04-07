@@ -251,39 +251,45 @@ namespace ProjetImmobilier.ViewModel
         private void saveData()
         {
 
-            // Créer l'estate
-            var estate = new Model.Estate()
+            // Vérifier si l'adresse n'existe pas
+            var estAddr = Model.EstateDbContext.Current.Estates.Where(e => e.Address == Address).ToList();
+
+            if (estAddr.Count != 0)
             {
-                Type = SelectedEstateType,
-                Address = Address,
-                Zip = Zip,
-                City = City,
-                Surface = Int32.Parse(Surface),
-                FloorCount = Int32.Parse(FloorC),
-                FloorNumber = Int32.Parse(FloorN),
-                RoomsCount = Int32.Parse(RoomsC),
-                EnergyEfficiency = Int32.Parse(EnergyE),
-                BuildDate = BuildDate,
-                OwnerId = idPerson
-            };
+                // Créer l'estate
+                var estate = new Model.Estate()
+                {
+                    Type = SelectedEstateType,
+                    Address = Address,
+                    Zip = Zip,
+                    City = City,
+                    Surface = Int32.Parse(Surface),
+                    FloorCount = Int32.Parse(FloorC),
+                    FloorNumber = Int32.Parse(FloorN),
+                    RoomsCount = Int32.Parse(RoomsC),
+                    EnergyEfficiency = Int32.Parse(EnergyE),
+                    BuildDate = BuildDate,
+                    OwnerId = idPerson
+                };
 
-            // Récupérer l'id en base de données
-            var estId = Model.EstateDbContext.Current.Estates.Where(e => e.Address == Address).Select(e => e.Id).ToList();
+                // Récupérer l'id en base de données
+                var estId = Model.EstateDbContext.Current.Estates.Where(e => e.Address == Address).Select(e => e.Id).ToList();
 
-            int eId = 0;
-            if (estId.Count != 0)
-                eId = estId[0];
+                int eId = 0;
+                if (estId.Count != 0)
+                    eId = estId[0];
 
-            // Créer le contrat
-            var contract = new Model.Contract()
-            {
-                EstateId = eId,
-                Type = SelectedContractType,
-                PubDate = new DateTime(),
-                Description = Description,
-                Title = Title,
-                Price = Price
-            };
+                // Créer le contrat
+                var contract = new Model.Contract()
+                {
+                    EstateId = eId,
+                    Type = SelectedContractType,
+                    PubDate = new DateTime(),
+                    Description = Description,
+                    Title = Title,
+                    Price = Price
+                };
+            }
         }
 
     }
