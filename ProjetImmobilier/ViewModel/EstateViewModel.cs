@@ -145,7 +145,7 @@ namespace ProjetImmobilier.ViewModel
 
         private void selectEstate(Estate e)
         {
-            int id = e.Id - 36;
+            int id = e.Id - 1;
 
             EstateType = listEstate[id].Type.ToString();
             Title = listEstate[id].Contracts[0].Title;

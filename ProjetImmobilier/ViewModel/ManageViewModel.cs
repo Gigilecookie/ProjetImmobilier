@@ -181,7 +181,7 @@ namespace ProjetImmobilier.ViewModel
         public void selectEstate(Estate e)
         {
             
-            int id = e.Id - 36;
+            int id = e.Id - 1;
             Address = listEstate[id].Address;
             Zip = listEstate[id].Zip;
             City = listEstate[id].City;

@@ -121,7 +121,7 @@
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0">Eestate type</TextBlock>
+                    <TextBlock Grid.Row="0">Estate type</TextBlock>
                     <ComboBox Grid.Row="1" ItemsSource="{Binding EstateTypeItems}" SelectedItem="{Binding SelectedEstateType}"/>
                 </Grid>
 
