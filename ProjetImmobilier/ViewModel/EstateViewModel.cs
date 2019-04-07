@@ -55,9 +55,9 @@ namespace ProjetImmobilier.ViewModel
             }
         }
 
-        public Array EstateTypeItems
+        public String EstateType
         {
-            get { return Enum.GetValues(typeof(Model.EstateType)); }
+            get { return GetField<String>(); }
             set { SetField(value); }
         }
 
@@ -121,11 +121,17 @@ namespace ProjetImmobilier.ViewModel
             set { SetField(value); }
         }
 
+        public String Owner
+        {
+            get { return GetField<String>(); }
+            set { SetField(value); }
+        }
+
         private void selectEstate(Estate e)
         {
-            int id = e.Id;
+            int id = e.Id - 36;
 
-            //EstateTypeItems = a[id].Type.ToString();
+            EstateType = listEstate[id].Type.ToString();
             Title = listEstate[id].Contracts[0].Title;
             Photo = listEstate[id].MainPhoto.Content;
             Address = listEstate[id].Address.ToString();
@@ -137,7 +143,7 @@ namespace ProjetImmobilier.ViewModel
             EnergyE = listEstate[id].EnergyEfficiency.ToString();
             RoomsC = listEstate[id].RoomsCount.ToString();
             //BuildDate = listEstate[id].BuildDate.Value;
-
+            Owner = listEstate[id].Owner.CompleteName.ToString();
 
         }
     }
