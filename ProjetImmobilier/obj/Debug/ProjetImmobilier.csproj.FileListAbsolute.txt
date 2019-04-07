@@ -767,7 +767,6 @@ C:\Users\User\Desktop\IUT\Semestre 3\DotNet\ProjetImmobiliergit\ProjetImmobilier
 C:\Users\User\Desktop\IUT\Semestre 3\DotNet\ProjetImmobiliergit\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\User\Desktop\IUT\Semestre 3\DotNet\ProjetImmobiliergit\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\User\Desktop\IUT\Semestre 3\DotNet\ProjetImmobiliergit\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\bin\Debug\System.Windows.Interactivity.xml
-C:\Users\User\Desktop\IUT\Semestre 3\DotNet\ProjetImmobiliergit\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.csprojResolveAssemblyReference.cache
 C:\Users\User\Desktop\IUT\Semestre 3\DotNet\ProjetImmobiliergit\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.exe.config
 C:\Users\User\Desktop\IUT\Semestre 3\DotNet\ProjetImmobiliergit\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\View\AddPersonWindow.g.cs
 C:\Users\User\Desktop\IUT\Semestre 3\DotNet\ProjetImmobiliergit\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\View\EstateUserControl.g.cs
@@ -793,3 +792,4 @@ C:\Users\User\Desktop\IUT\Semestre 3\DotNet\ProjetImmobiliergit\ProjetImmobilier
 C:\Users\User\Desktop\IUT\Semestre 3\DotNet\ProjetImmobiliergit\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\IUT\Semestre 3\DotNet\ProjetImmobiliergit\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.exe
 C:\Users\User\Desktop\IUT\Semestre 3\DotNet\ProjetImmobiliergit\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.pdb
+C:\Users\User\Desktop\IUT\Semestre 3\DotNet\ProjetImmobiliergit\ProjetImmobilier\ProjetImmobilier\ProjetImmobilier\obj\Debug\ProjetImmobilier.csprojResolveAssemblyReference.cache

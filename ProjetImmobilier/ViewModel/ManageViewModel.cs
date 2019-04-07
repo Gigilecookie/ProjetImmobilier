@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetImmobilier.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,8 +13,38 @@ namespace ProjetImmobilier.ViewModel
 {
     class ManageViewModel : Tools.BaseNotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private int idPerson;
+        private ObservableCollection<Estate> listEstate;
+        private Estate selectedEstate;
+
+        public ObservableCollection<Estate> ListEstate
+        {
+            get { return listEstate; }
+            set
+            {
+                if (value != listEstate)
+                {
+                    listEstate = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ListEstate)));
+                }
+            }
+        }
+
+        public Estate SelectedEstate
+        {
+            get { return selectedEstate; }
+            set
+            {
+                if (value != selectedEstate)
+                {
+                    selectedEstate = value;
+                    selectEstate(selectedEstate);
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedEstate)));
+                }
+            }
+        }
 
         public Array EstateTypeItems
         {
@@ -103,6 +137,11 @@ namespace ProjetImmobilier.ViewModel
 
         public ManageViewModel()
         {
+            listEstate = new ObservableCollection<Estate>(EstateDbContext.Current.Estates.Include(e => e.Photos)
+                                                                                        .Include(e => e.Contracts)
+                                                                                        .Include(e => e.MainPhoto)
+                                                                                        .Include(e => e.Owner));
+
             Enabled = true;
             Address = "";
             Zip = "";
@@ -114,6 +153,25 @@ namespace ProjetImmobilier.ViewModel
             EnergyE = "";
             BuildDate = DateTime.Now;
             Description = "";
+        }
+
+        public void selectEstate(Estate e)
+        {
+            
+            int id = e.Id - 36;
+            Address = listEstate[id].Address;
+            Zip = listEstate[id].Zip;
+            City = listEstate[id].City;
+            Surface = listEstate[id].Surface.ToString();
+            FloorC = listEstate[id].FloorCount.ToString();
+            FloorN = listEstate[id].FloorNumber.ToString();
+            RoomsC = listEstate[id].RoomsCount.ToString();
+            EnergyE = listEstate[id].EnergyEfficiency.ToString();
+            BuildDate = DateTime.Now;
+            Description = listEstate[id].Contracts[0].Description;
+            Name = listEstate[id].Owner.Name;
+            Firstname = listEstate[id].Owner.FirstName;
+            Price = (int)listEstate[id].Contracts[0].Price;
         }
 
         public Commands.Command EnvoyerFormulaire

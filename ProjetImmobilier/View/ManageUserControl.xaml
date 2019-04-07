@@ -69,7 +69,7 @@
                 <Button Grid.Column="1" Grid.Row="0" Content="OK"/>
             </Grid>
             <Button Grid.Row="1" Content="Sort" />
-            <ListView Grid.Row="2">
+            <ListView Grid.Row="2" ItemsSource="{Binding ListEstate}" SelectedItem="{Binding SelectedEstate}" IsSynchronizedWithCurrentItem="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -77,14 +77,14 @@
                                 <ColumnDefinition Width="1*"/>
                                 <ColumnDefinition Width="3*"/>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0"/>
+                            <Image Grid.Column="0" Source="{Binding MainPhoto.Content, Converter={StaticResource Base64StringToBitmapImageConverter}}" MaxHeight="100" MaxWidth="100" />
                             <Grid Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="1*"/>
                                     <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
-                                <Label Content="Title" Grid.Row="0"/>
-                                <Label Content="Estate Type" Grid.Row="1"/>
+                                <Label Content="{Binding CompleteAddress}" Grid.Row="0"/>
+                                <Label Content="{Binding SurfaceUnit}" Grid.Row="1"/>
                             </Grid>
                         </Grid>
                     </DataTemplate>

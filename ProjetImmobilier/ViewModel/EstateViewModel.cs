@@ -17,15 +17,16 @@ namespace ProjetImmobilier.ViewModel
 
         private Estate selectedEstate;
         private ObservableCollection<Estate> listEstate;
+        private String searchBar;
 
         public EstateViewModel()
         {
-
             listEstate = new ObservableCollection<Estate>(EstateDbContext.Current.Estates.Include(e => e.Photos)
                                                                                         .Include(e => e.Contracts)
                                                                                         .Include(e => e.MainPhoto)
                                                                                         .Include(e => e.Owner));
-
+            selectEstate(listEstate[0]);
+            searchBar = "Search";
         }
 
         public ObservableCollection<Estate> ListEstate
@@ -51,6 +52,19 @@ namespace ProjetImmobilier.ViewModel
                     selectedEstate = value;
                     selectEstate(selectedEstate);
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedEstate))); 
+                }
+            }
+        }
+
+        public String SearchBar
+        {
+            get { return searchBar; }
+            set
+            {
+                if (value != searchBar)
+                {
+                    searchBar = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SearchBar)));
                 }
             }
         }
@@ -144,6 +158,22 @@ namespace ProjetImmobilier.ViewModel
             RoomsC = listEstate[id].RoomsCount.ToString();
             //BuildDate = listEstate[id].BuildDate.Value;
             Owner = listEstate[id].Owner.CompleteName.ToString();
+
+        }
+
+
+        public Commands.Command Search
+        {
+
+            get
+            {
+                return new Commands.Command(search);
+            }
+
+        }
+
+        private void search()
+        {
 
         }
     }
