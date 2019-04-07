@@ -40,8 +40,8 @@
                     <ColumnDefinition Width="5*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <TextBox Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Search" />
-                <Button Grid.Column="1" Grid.Row="0" Content="OK"/>
+                <TextBox Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="{Binding SearchBar}" />
+                <Button Grid.Column="1" Grid.Row="0" Content="OK" Command="{Binding Search}"/>
             </Grid>
             <Button Grid.Row="1" Content="Sort" />
             <ListView Grid.Row="2" ItemsSource="{Binding ListEstate}" SelectedItem="{Binding SelectedEstate}" IsSynchronizedWithCurrentItem="True">
@@ -114,7 +114,7 @@
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Label Padding="10 0 0 0" Grid.Row="0" Content="Estate Type :" HorizontalAlignment="Left" FontSize="14"/>
-                            <Label Padding="10 0 0 0" Grid.Row="1" Content="{Binding EstateTypeItems}" HorizontalAlignment="Left" FontSize="12" />
+                            <Label Padding="10 0 0 0" Grid.Row="1" Content="{Binding EstateType}" HorizontalAlignment="Left" FontSize="12" />
 
                             <Label Padding="10 0 0 0" Grid.Row="2" Content="Address :" HorizontalAlignment="Left" FontSize="14"/>
                             <Label Padding="10 0 0 0" Grid.Row="3" Content="{Binding Address}" HorizontalAlignment="Left" FontSize="12" />
@@ -141,7 +141,7 @@
                             <Label Padding="10 0 0 0" Grid.Row="17" Content="{Binding BuildDate}" HorizontalAlignment="Left" FontSize="12" />
 
                             <Label Padding="10 0 0 0" Grid.Row="18" Content="Owner :" HorizontalAlignment="Left" FontSize="14"/>
-                            <Label Padding="10 0 0 0" Grid.Row="19" Content="{Binding ListEstate.Owner.CompleteName}" HorizontalAlignment="Left" FontSize="12" Foreground="Black"/>
+                            <Label Padding="10 0 0 0" Grid.Row="19" Content="{Binding Owner}" HorizontalAlignment="Left" FontSize="12" Foreground="Black"/>
 
                         </Grid>
 

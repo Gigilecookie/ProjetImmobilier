@@ -18,6 +18,7 @@ namespace ProjetImmobilier
         {
             base.OnStartup(e);
             await Model.EstateDbContext.Initialize();
+
         }
     }
 }
