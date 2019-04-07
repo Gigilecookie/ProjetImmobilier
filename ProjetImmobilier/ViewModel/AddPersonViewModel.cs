@@ -88,6 +88,9 @@ namespace ProjetImmobilier.ViewModel
 
         private void add()
         {
+
+            // Vérifier tous les champs
+
             var person = new Model.Person()
             {
                 Quality = Selected,
